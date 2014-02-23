@@ -51,7 +51,6 @@ RUN chmod 0777 /usr/share/nginx/www/anchor/config
 ADD ./start.sh /start.sh
 RUN chmod 755 /start.sh
 
-#RUN echo "Install with database anchorcms and password above - also in anchor-db-pw.txt"
 
 # private expose
 EXPOSE 80
