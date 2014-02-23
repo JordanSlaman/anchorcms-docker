@@ -31,7 +31,7 @@ RUN sed -i -e "s/;cgi.fix_pathinfo=1/cgi.fix_pathinfo=0/g" /etc/php5/fpm/php.ini
 RUN sed -i -e "s/upload_max_filesize\s*=\s*2M/upload_max_filesize = 100M/g" /etc/php5/fpm/php.ini
 RUN sed -i -e "s/post_max_size\s*=\s*8M/post_max_size = 100M/g" /etc/php5/fpm/php.ini
 RUN sed -i -e "s/;daemonize\s*=\s*yes/daemonize = no/g" /etc/php5/fpm/php-fpm.conf
-RUN find /etc/php5/cli/conf.d/ -name "*.ini" -exec sed -i -re 's/^(\s*)#(.*)/\1;\2/g' {} \;
+#RUN find /etc/php5/cli/conf.d/ -name "*.ini" -exec sed -i -re 's/^(\s*)#(.*)/\1;\2/g' {} \;
 
 # nginx site conf
 ADD ./nginx-site.conf /etc/nginx/sites-available/default
@@ -41,9 +41,8 @@ RUN /usr/bin/easy_install supervisor
 ADD ./supervisord.conf /etc/supervisord.conf
 
 # Install Anchor
-ADD ./anchor-cms /usr/share/nginx/
 RUN rm -rf /usr/share/nginx/www
-RUN mv /usr/share/nginx/anchor-cms /usr/share/nginx/www
+ADD ./anchor-cms /usr/share/nginx/www
 RUN chown -R www-data:www-data /usr/share/nginx/www
 RUN chmod 0777 /usr/share/nginx/www/content
 RUN chmod 0777 /usr/share/nginx/www/anchor/config
