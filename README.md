@@ -33,6 +33,8 @@ commit it to a new name
 ```
 sudo docker commit --run="{"Cmd": ["/usr/local/bin/supervisord", "-n"]}" $ID myblogname
 ```
+You can then exit your running shells, anchor should be ready for use.
+
 
 ## Run the container
 ```

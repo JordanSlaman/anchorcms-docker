@@ -48,8 +48,8 @@ RUN chmod 0777 /usr/share/nginx/www/content
 RUN chmod 0777 /usr/share/nginx/www/anchor/config
 
 # Initialization and Startup Script
-ADD ./start.sh /start.sh
-RUN chmod 755 /start.sh
+ADD ./setup.sh /setup.sh
+RUN chmod 755 /setup.sh
 
 
 # private expose
