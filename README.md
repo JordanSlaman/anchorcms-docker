@@ -31,13 +31,18 @@ sudo docker ps
 ```
 commit it to a new name
 ```
-sudo docker commit --run="{"Cmd": ["/usr/local/bin/supervisord", "-n"]}" $ID myblogname
+sudo docker commit $ID myblogname
 ```
-You can then exit your running shells, anchor should be ready for use.
-
-
-## Run the container
+You can then stop your previous container with it's ID
 ```
-sudo docker run -d myblogname
+sudo docker stop $ID
 ```
 
+## Run the container on port 80. If hosting multiple sites use nginx/hipache/varnish/... to route different hostnames to different docker ports.
+```
+sudo docker run -d -p=80:80 myblogname /usr/local/bin/supervisord -n
+```
+
+Remember to commit your container to a new name before shutting it down, any changes to the database would be lost elsewise.
+
+Feel free to fork this and make it easier to use!

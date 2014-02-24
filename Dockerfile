@@ -54,5 +54,3 @@ RUN chmod 755 /setup.sh
 
 # private expose
 EXPOSE 80
-
-CMD ["/bin/bash", "/start.sh"]
