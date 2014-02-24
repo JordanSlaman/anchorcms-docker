@@ -40,7 +40,8 @@ You should then stop your previous container with it's ID
 sudo docker stop $ID
 ```
 
-## Runs the container on port 80. If hosting multiple sites use nginx/hipache/varnish/... to route different hostnames to different docker ports.
+## Runs the container on port 80.
+If hosting multiple sites use nginx/hipache/varnish/... to route different hostnames to different docker ports.
 ```
 sudo docker run -d -p=80:80 myblogname /usr/local/bin/supervisord -n
 ```
