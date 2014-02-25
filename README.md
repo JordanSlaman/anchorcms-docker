@@ -4,7 +4,7 @@ A Dockerfile that sets up a LEMP stack running AnchorCMS
 
 Modified from Eugene Ware's docker-wordpress-nginx script: https://github.com/eugeneware/docker-wordpress-nginx/
 
-Uses Anchor 0.9.2, but before the build step you can remove the anchor directory and clone a later version from their repository.
+Uses Anchor 0.9.2, but before the build step you can remove the anchor directory and clone a later version from their repository. This would also be a good time to install themes.
 
 
 ## Installation
