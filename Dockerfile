@@ -1,8 +1,8 @@
 #Based heavily off of Eugene Ware's docker-wordpress-nginx script: https://github.com/eugeneware/docker-wordpress-nginx/
 
-FROM ubuntu
+FROM ubuntu:precise
 MAINTAINER Jordan Slaman <jordan.slaman@gmail.com>
-RUN echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt/sources.list
+
 RUN apt-get update
 RUN apt-get -y upgrade
 
